@@ -1,0 +1,15 @@
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/bin/Debug/net6.0/Infrastructure.deps.json
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/bin/Debug/net6.0/Infrastructure.dll
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/bin/Debug/net6.0/Infrastructure.pdb
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/bin/Debug/net6.0/ApplicationCore.dll
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/bin/Debug/net6.0/ApplicationCore.pdb
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.AssemblyReference.cache
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/obj/Debug/net6.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/obj/Debug/net6.0/Infrastructure.AssemblyInfoInputs.cache
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/obj/Debug/net6.0/Infrastructure.AssemblyInfo.cs
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.CopyComplete
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/obj/Debug/net6.0/Infrastructure.dll
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/obj/Debug/net6.0/refint/Infrastructure.dll
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/obj/Debug/net6.0/Infrastructure.pdb
+/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/obj/Debug/net6.0/ref/Infrastructure.dll

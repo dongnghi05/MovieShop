@@ -1,0 +1,12 @@
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/bin/Debug/net6.0/ApplicationCore.deps.json
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/bin/Debug/net6.0/ApplicationCore.dll
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/bin/Debug/net6.0/ApplicationCore.pdb
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/obj/Debug/net6.0/ApplicationCore.csproj.AssemblyReference.cache
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/obj/Debug/net6.0/ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/obj/Debug/net6.0/ApplicationCore.AssemblyInfoInputs.cache
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/obj/Debug/net6.0/ApplicationCore.AssemblyInfo.cs
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/obj/Debug/net6.0/ApplicationCore.csproj.CoreCompileInputs.cache
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/obj/Debug/net6.0/ApplicationCore.dll
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/obj/Debug/net6.0/refint/ApplicationCore.dll
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/obj/Debug/net6.0/ApplicationCore.pdb
+/Users/nghivo/Documents/Movie Project/MovieShop/ApplicationCore/obj/Debug/net6.0/ref/ApplicationCore.dll
