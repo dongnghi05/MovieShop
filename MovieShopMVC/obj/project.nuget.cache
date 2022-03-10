@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9oPXzUr5sg/ZXmf1K4Jt+9I6C7fw8zkpuLwMkRsVMlDRkJBwylooycxAXLjwpNn743XRs4ykW6kK10lBEdtIbQ==",
+  "dgSpecHash": "8DQEDNfoImBs99FeIrEZSiMZWiwu+rZw/QSrQhkD+V1Mo0jmxp76Vj3F7YUDnmI4vP88cFkZGgTqDrypjJVP2A==",
   "success": true,
   "projectFilePath": "/Users/nghivo/Documents/Movie Project/MovieShop/MovieShopMVC/MovieShopMVC.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "/Users/nghivo/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
     "/Users/nghivo/.nuget/packages/messagepack.annotations/2.1.152/messagepack.annotations.2.1.152.nupkg.sha512",
     "/Users/nghivo/.nuget/packages/messagepackanalyzer/2.1.152/messagepackanalyzer.2.1.152.nupkg.sha512",
+    "/Users/nghivo/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.3/microsoft.aspnetcore.cryptography.internal.6.0.3.nupkg.sha512",
+    "/Users/nghivo/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/6.0.3/microsoft.aspnetcore.cryptography.keyderivation.6.0.3.nupkg.sha512",
     "/Users/nghivo/.nuget/packages/microsoft.aspnetcore.razor.language/6.0.0/microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "/Users/nghivo/.nuget/packages/microsoft.bcl.asyncinterfaces/5.0.0/microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "/Users/nghivo/.nuget/packages/microsoft.build/17.0.0/microsoft.build.17.0.0.nupkg.sha512",
