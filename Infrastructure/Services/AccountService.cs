@@ -33,7 +33,7 @@ public class AccountService: IAccountService
                 Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                //DateOfBirth = user.DateOfBirth.GetValueOrDefault()
+                DateOfBirth = user.DateOfBirth
             };
         }
 

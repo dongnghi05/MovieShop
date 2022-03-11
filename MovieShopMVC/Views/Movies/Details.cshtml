@@ -1,8 +1,110 @@
 
-@model ApplicationCore.Models.MovieDetailsModel
-<h2>Movie Details</h2>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<h3> @Model.Title </h3>
-<h6>
-    @Model.Overview
-</h6>
+@using System.Globalization
+@model ApplicationCore.Models.MovieDetailsModel
+<div class="container">
+    <div class="row" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ), url(@Model.BackdropUrl); 
+                            background-size: cover ">
+        <div class="col-3">
+            <div style="padding: 30px">
+                <img src= "@Model.PosterUrl" width="150"/>
+            </div>
+        </div>
+        <div class="col-6">
+            <h3 style="color: white"">@Model.Title</h3>
+            <p style="font-size: xx-small; color: #D0D4DB" >@Model.Tagline</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <p style="color: #D0D4DB; font-size: x-small; text-align: left">@Model.RunTime m | @Model.ReleaseDate.Value.Year</p>
+                    </div>
+                    <div class="col-9">
+                        @{
+                            foreach (var i in @Model.Genres)
+                            {
+                                <span class="badge rounded-pill bg-secondary">@i.Name</span>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+            <span class="badge bg-success">8.9</span>
+            <p style="color: white; font-size:x-small ">@Model.Overview</p>
+            </>
+        </div>
+        <div class="col-3">
+            <div class="d-grid gap-2 col-9 mx-auto">
+                <button type="button" class="btn btn-primary far fa-edit"
+                        style="background-color: Transparent; border: white">
+                    REVIEW
+                </button>
+                <button type="button" class="btn btn-primary "
+                        style="color: black; background-color: white">
+                    BUY $@Model.Price
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5" style="background-color:#E9ECF1">
+            <div><b>MOVIE FACTS</b></div>
+            <hr style="color: #E9ECF1"/>
+            <div class="fa fa-calendar" style="font-size: small">
+                Release Date 
+                <div class="badge rounded-pill bg-secondary">
+                    @Model.ReleaseDate.Value.Date.ToString("MMMM dd"),
+                    @Model.ReleaseDate.Value.Year
+                </div>
+            </div>
+            <hr/>
+            <div class="fa fa-hourglass-start" style="font-size: small">
+                Run Time
+                <div class="badge rounded-pill bg-secondary">@Model.RunTime m</div>
+            </div>
+            <hr/>
+            <div class='far fa-money-bill-alt' style="font-size: small">
+                Box Offline
+                <div class="badge rounded-pill bg-secondary">$@Math.Round(@Model.Revenue.Value,2)</div>
+            </div>
+            <hr/>
+            <div class='fas fa-dollar-sign' style="font-size: small">
+                Budget
+                <div class="badge rounded-pill bg-secondary">$@Math.Round(@Model.Budget.Value,2)</div>
+            </div>
+            <hr/>
+            <div class="fa fa-imdb fa fa-external-link">      
+                <a class="fa fa-external-link" href="@Model.ImdbUrl" style="color: black"></a>
+            </div>
+            <hr style="color: #E9ECF1"/>
+            <div><b>TRAILERS</b></div>
+            <div class="fa fa-youtube-play">
+                <a href="@Model.Trailers" style="color: black">@Model.Title</a>
+            </div>
+        </div>
+        <div class="col-7">
+            <div><b>CASTS</b></div>
+            <hr style="color: #E9ECF1"/>
+            @{
+                foreach (var name in @Model.Casts)
+                {
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2">
+                                <img src="@name.ProfilePath" style=" border-radius: 70%" width="50"/>
+                            </div>
+                            <div class="col-5">
+                                @name.Name
+                            </div>
+                            <div class="col-5">
+                                @name.Character
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                }
+            }
+        </div>
+    </div>
+</div>
