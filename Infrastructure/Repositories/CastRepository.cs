@@ -1,6 +1,7 @@
 using ApplicationCore.Contracts.Respositories;
 using ApplicationCore.Contracts.Services;
 using ApplicationCore.Entities;
+using ApplicationCore.Models;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -19,5 +20,6 @@ public class CastRepository: EfRepository<Cast>, ICastRepository
             .ThenInclude(c => c.Movie).FirstOrDefaultAsync(c=>c.Id == id);
         return movieCast;
     }
+
     
 }

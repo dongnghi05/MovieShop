@@ -3084,6 +3084,16 @@
         "runtime": {
           "bin/placeholder/Infrastructure.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -9538,6 +9548,11 @@
       "type": "project",
       "path": "../Infrastructure/Infrastructure.csproj",
       "msbuildProject": "../Infrastructure/Infrastructure.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9546,7 +9561,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 6.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.3",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.2",
+      "Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9576,6 +9592,9 @@
           "projectReferences": {
             "/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/Infrastructure.csproj": {
               "projectPath": "/Users/nghivo/Documents/Movie Project/MovieShop/Infrastructure/Infrastructure.csproj"
+            },
+            "/Users/nghivo/Documents/Movie Project/MovieShop/Services/Services.csproj": {
+              "projectPath": "/Users/nghivo/Documents/Movie Project/MovieShop/Services/Services.csproj"
             }
           }
         }

@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="col-6">
-            <h3 style="color: white"">@Model.Title</h3>
+            <h3 style="color: white">@Model.Title</h3>
             <p style="font-size: xx-small; color: #D0D4DB" >@Model.Tagline</p>
             <div class="container">
                 <div class="row">
@@ -32,7 +32,6 @@
             </div>
             <span class="badge bg-success">8.9</span>
             <p style="color: white; font-size:x-small ">@Model.Overview</p>
-            </>
         </div>
         <div class="col-3">
             <div class="d-grid gap-2 col-9 mx-auto">
@@ -47,12 +46,15 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="container">
     <div class="row">
         <div class="col-5" style="background-color:#E9ECF1">
             <div><b>MOVIE FACTS</b></div>
             <hr style="color: #E9ECF1"/>
             <div class="fa fa-calendar" style="font-size: small">
-                Release Date 
+                Release Date
                 <div class="badge rounded-pill bg-secondary">
                     @Model.ReleaseDate.Value.Date.ToString("MMMM dd"),
                     @Model.ReleaseDate.Value.Year
@@ -66,43 +68,52 @@
             <hr/>
             <div class='far fa-money-bill-alt' style="font-size: small">
                 Box Offline
-                <div class="badge rounded-pill bg-secondary">$@Math.Round(@Model.Revenue.Value,2)</div>
+                <div class="badge rounded-pill bg-secondary">$@Math.Round(@Model.Revenue.Value, 2)</div>
             </div>
             <hr/>
             <div class='fas fa-dollar-sign' style="font-size: small">
                 Budget
-                <div class="badge rounded-pill bg-secondary">$@Math.Round(@Model.Budget.Value,2)</div>
+                <div class="badge rounded-pill bg-secondary">$@Math.Round(@Model.Budget.Value, 2)</div>
             </div>
             <hr/>
-            <div class="fa fa-imdb fa fa-external-link">      
+            <div class="fa fa-imdb fa fa-external-link">
                 <a class="fa fa-external-link" href="@Model.ImdbUrl" style="color: black"></a>
             </div>
             <hr style="color: #E9ECF1"/>
             <div><b>TRAILERS</b></div>
-            <div class="fa fa-youtube-play">
-                <a href="@Model.Trailers" style="color: black">@Model.Title</a>
-            </div>
+            @{
+                    foreach (var trailer in @Model.Trailers)
+                    {
+                        <div class="fa fa-youtube-play">
+                            <a href="trailer" style="color: black">@trailer.Name</a>
+                        </div>
+                        <hr/>
+                        
+                    }
+                }
         </div>
         <div class="col-7">
             <div><b>CASTS</b></div>
             <hr style="color: #E9ECF1"/>
             @{
-                foreach (var name in @Model.Casts)
+                foreach (var cast in @Model.Casts)
                 {
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="@name.ProfilePath" style=" border-radius: 70%" width="50"/>
-                            </div>
-                            <div class="col-5">
-                                @name.Name
-                            </div>
-                            <div class="col-5">
-                                @name.Character
+                    <a asp-action="Details" asp-controller="Cast" asp-route-id="@cast.Id">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="@cast.ProfilePath" style=" border-radius: 70%" width="50"/>
+                                </div>
+                                <div class="col-5">
+                                    @cast.Name
+                                </div>
+                                <div class="col-5">
+                                    @cast.Character
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr/>
+                        <hr/>
+                    </a>
                 }
             }
         </div>
