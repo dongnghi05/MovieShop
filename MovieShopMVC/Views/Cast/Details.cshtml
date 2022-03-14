@@ -1,0 +1,11 @@
+@model ApplicationCore.Models.CastDetailsModel
+
+<h1>@Model.Name</h1>
+<div>@Model.ProfilePath</div>
+@{
+    foreach (var movie in @Model.movies)
+    {
+        <div>@movie.Title</div>
+    }
+    
+}
