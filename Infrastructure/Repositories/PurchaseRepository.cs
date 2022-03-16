@@ -15,7 +15,8 @@ public class PurchaseRepository: EfRepository<Purchase>, IPurchaseRepository
     public async Task<Purchase> GetPurchaseMovie(int UserId, int MovieId)
     {
         var purchaseMovie =
-            await _dbContext.Purchases.FirstOrDefaultAsync(p => p.UserId == UserId && p.MovieId == MovieId);
+            await _dbContext.Purchases.Include(g => g.Movie)
+                .FirstOrDefaultAsync(p => p.UserId == UserId && p.MovieId == MovieId);
         return purchaseMovie;
     }
 

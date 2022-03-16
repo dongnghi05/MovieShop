@@ -1,0 +1,68 @@
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@model List<ApplicationCore.Models.PurchaseModel>
+@{
+    <div class="rounded">
+        <div class="container-fluid bg-light">
+            <div class="row">
+                @foreach (var purchase in @Model)
+                {
+                    <div class="col-6 col-lg-3 col-sm-4 col-xl-2">
+                        <partial name="_MovieCard" model="purchase.Movie"/>
+                        <!-- Button trigger modal -->
+                        @{
+                            string unique = "#example" + @purchase.Movie.Id.ToString();
+                        }
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="@unique">Purchase Detail</button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="@unique.Substring(1)" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Purchase Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-4">
+                                        <img src="@purchase.Movie.PosterUrl" width="130"/>
+                                    </div>
+                                    <div class="col">
+                                        <div class="fa fa-calendar" style="font-size: small">
+                                            Purchase Date
+                                            <div class="badge rounded-pill bg-secondary">
+                                                @purchase.PurchaseDateTime.Date.ToString("MMMM dd"),
+                                                @purchase.PurchaseDateTime.Year
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class='fas fa-dollar-sign' style="font-size: small">
+                                            Price
+                                            <div class="badge rounded-pill bg-secondary">@purchase.TotalPrice</div>
+                                        </div>
+                                        <hr/>
+                                        <div class="fa fa-check-circle">
+                                            Purchase Number
+                                            <div class="badge rounded-pill bg-secondary">@purchase.PurchaseNumber</div>
+                                        </div>
+                                        
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+

@@ -14,7 +14,8 @@ public class FavoriteRepository : EfRepository<Favorite>, IFavoriteRepository
     public async Task<Favorite> GetFavoriteMovie(int UserId, int MovieId)
     {
         var favoriteMovie =
-            await _dbContext.Favorites.FirstOrDefaultAsync(f => f.UserId == UserId && f.MovieId == MovieId);
+            await _dbContext.Favorites.Include(f=>f.Movie)
+                .FirstOrDefaultAsync(f => f.UserId == UserId && f.MovieId == MovieId);
         return favoriteMovie;
     }
 

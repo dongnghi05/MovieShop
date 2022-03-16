@@ -63,6 +63,7 @@ public class AccountService: IAccountService
             LastName = model.LastName,
             Email = model.Email,
             Salt = salt,
+            HashedPassword = hasedPassword,
             DateOfBirth = model.DateOfBirth
         };
         

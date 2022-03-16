@@ -36,7 +36,7 @@ public class UserService: IUserService
             TotalPrice = purchaseRequest.TotalPrice,
             PurchaseNumber = purchaseRequest.PurchaseNumber
         };
-        var createPurchase = _purchaseRepository.Add(newPurchase);
+        var createPurchase = await _purchaseRepository.Add(newPurchase);
         return createPurchase.Id;
     }
 
@@ -50,22 +50,28 @@ public class UserService: IUserService
         return false;
     }
 
-    public async Task<List<MovieCardModel>> GetAllPurchasesForUser(int id)
+    public async Task<List<PurchaseModel>> GetAllPurchasesForUser(int id)
     {
         var purchaseMovie = await _purchaseRepository.GetAllPurchasesForUser(id);
         
-        var movieList = new List<MovieCardModel>();
+        var purchaseList = new List<PurchaseModel>();
         foreach (var purchase in purchaseMovie)
         {
-            movieList.Add(new MovieCardModel
+            purchaseList.Add(new PurchaseModel
             {
-                Id = purchase.MovieId,
-                PosterUrl = purchase.Movie.PosterUrl,
-                Title = purchase.Movie.Title
+                PurchaseNumber = purchase.PurchaseNumber,
+                TotalPrice = purchase.TotalPrice,
+                PurchaseDateTime = purchase.PurchaseDateTime,
+                Movie = new MovieCardModel
+                {
+                    Id = purchase.MovieId,
+                    PosterUrl = purchase.Movie.PosterUrl,
+                    Title = purchase.Movie.Title
+                }
             });
         }
 
-        return movieList;
+        return purchaseList;
     }
 
     public async Task<PurchaseRequestModel> GetPurchasesDetails(int userId, int movieId)
@@ -73,17 +79,18 @@ public class UserService: IUserService
         var purchase = await _purchaseRepository.GetPurchaseMovie(userId, movieId);
         if (purchase == null)
         {
-            throw new Exception("Not purchase movie");
+            return null;
         }
 
         var purchaseDetails = new PurchaseRequestModel
         {
+            MovieId = movieId,
             PurchaseNumber = purchase.PurchaseNumber,
             TotalPrice = purchase.TotalPrice,
             PurchaseDateTime = purchase.PurchaseDateTime,
             Movie = new MovieCardModel
             {
-                Id = purchase.Id,
+                Id = movieId,
                 PosterUrl = purchase.Movie.PosterUrl,
                 Title = purchase.Movie.Title
             }
@@ -103,7 +110,7 @@ public class UserService: IUserService
         var newFavorite = new Favorite
         {
             MovieId = favoriteRequest.MovieId,
-            UserId = favorite.UserId
+            UserId = favoriteRequest.UserId
         };
 
         var createFavorite =  await _favoriteRepository.Add(newFavorite);
@@ -132,20 +139,24 @@ public class UserService: IUserService
         return false;
     }
 
-    public async Task<List<MovieCardModel>> GetAllFavoritesForUser(int id)
+    public async Task<List<FavoriteModel>> GetAllFavoritesForUser(int id)
     {
         var favoriteMovie = await _favoriteRepository.GetAllFavoriteForUser(id);
-        var favoriteList = new List<MovieCardModel>();
-        foreach (var movie in favoriteMovie)
+        var favoriteList = new List<FavoriteModel>();
+        foreach (var favorite in favoriteMovie)
         {
-            favoriteList.Add(new MovieCardModel()
+            favoriteList.Add(new FavoriteModel()
             {
-                Id = movie.Id,
-                PosterUrl = movie.Movie.PosterUrl,
-                Title = movie.Movie.Title
+                UserId = favorite.UserId,
+                MovieId = favorite.MovieId,
+                Movie = new MovieCardModel
+                {
+                    Id = id,
+                    PosterUrl = favorite.Movie.PosterUrl,
+                    Title = favorite.Movie.Title
+                }
             });
         }
-
         return favoriteList;
     }
 
@@ -199,4 +210,6 @@ public class UserService: IUserService
         }
         return reviewList;
     }
+
+   
 }

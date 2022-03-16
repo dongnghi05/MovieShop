@@ -10,5 +10,6 @@ namespace MovieShopMVC.Services
         bool IsAdmin { get; }
         List<string> Roles  { get; }
         string IpAdress { get; }
+        
     }
 }

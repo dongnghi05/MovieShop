@@ -1,0 +1,17 @@
+@model List<ApplicationCore.Models.FavoriteModel>
+
+@{
+    <div class="rounded">
+        <div class="container-fluid bg-light">
+            <div class="row">
+                @foreach (var favorite in @Model)
+                {
+                    <div class="col-6 col-lg-3 col-sm-4 col-xl-2">
+                        <partial name="_MovieCard" model="favorite.Movie"/>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
